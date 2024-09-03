@@ -186,7 +186,7 @@
 
 const router = require("express").Router();
 const apiRoutes = require("./apiRoutes.js");
-const homeRoutes = require("./home-routes.js");
+const homeRoutes = require("./homeRoutes.js");
 const { User, Post, Comment } = require("../models");
 
 // Use API routes

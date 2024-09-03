@@ -67,9 +67,9 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const { sequelize } = require("./models");
-const homeRoutes = require("./controllers/homeRoutes");
-const apiRoutes = require("./controllers/apiRoutes");
+const { sequelize } = require("./config/connection");
+const homeRoutes = require("./controller/homeRoutes");
+const apiRoutes = require("./controller/apiRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
