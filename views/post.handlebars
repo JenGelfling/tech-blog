@@ -1,0 +1,9 @@
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<p>by {{post.user.username}}</p>
+<h3>Comments:</h3>
+{{#each post.comments}}
+  <div>
+    <p>{{this.content}} - by {{this.user.username}}</p>
+  </div>
+{{/each}}

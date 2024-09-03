@@ -1,28 +1,38 @@
+const User = require("./User");
+const Post = require("./Post");
+const Comment = require("./Comment");
 
-const Users = require('./Users');
-const Reviews = require('./Reviews');
-const Likes = require('./Likes');
-
-// A movie can have many reviews
-Likes.hasMany(Reviews, {
-  foreignKey: 'like_id',
-  onDelete: 'CASCADE'
+// A user can have many comments
+User.hasMany(Comment, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
-// A review belongs to one movie
-Reviews.belongsTo(Likes, {
-  foreignKey: 'like_id'
+// A post can have many comments
+Post.hasMany(Comment, {
+  foreignKey: "post_id",
+  onDelete: "CASCADE",
 });
 
-// A review belongs to one user
-Reviews.belongsTo(Users, {
-  foreignKey: 'author_id'
+// A comment belongs to a user
+Comment.belongsTo(User, {
+  foreignKey: "user_id",
 });
 
-// A user can have many reviews
-Users.hasMany(Reviews, {
-  foreignKey: 'author_id',
-  onDelete: 'CASCADE'
+// A comment belongs to a post
+Comment.belongsTo(Post, {
+  foreignKey: "post_id",
 });
 
-module.exports = { Users, Reviews, Likes };
+// A user can have many posts
+User.hasMany(Post, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+// A post belongs to a user
+Post.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+module.exports = { User, Post, Comment };
