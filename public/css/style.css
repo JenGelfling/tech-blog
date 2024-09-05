@@ -150,3 +150,21 @@ header,
   font-weight: bold;
   margin-left: -5px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly */
+  align-items: center; /* Center items vertically */
+  padding: 0.5rem 1rem; /* Add some padding */
+}
+
+nav a {
+  font-size: 1.2rem; /* Increase font size for larger text */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Change color to match your design */
+  padding: 0.5rem 1rem; /* Add padding around the text */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Optional: underline on hover */
+}

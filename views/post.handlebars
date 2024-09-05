@@ -4,6 +4,7 @@
 <h3>Comments:</h3>
 {{#each post.comments}}
   <div>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p>
     <p>{{this.content}} - by {{this.user.username}}</p>
   </div>
 {{/each}}
