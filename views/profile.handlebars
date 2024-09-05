@@ -10,7 +10,7 @@
 
     <form class="form new-post-form">
       <div class="form-group">
-        <label for="post-name">Post title:</label>
+        <label for="post-title">Post title:</label>
         <input
           class="form-input"
           type="text"
@@ -35,7 +35,7 @@
       {{#each posts as |post|}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+            <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
           </div>
           <div class="col-md-4">
             <button
@@ -45,6 +45,10 @@
           </div>
         </div>
       {{/each}}
+    </div>
+  {{else}}
+    <div class="col-md-6">
+      <p>No posts available.</p>
     </div>
   {{/if}}
 </div>

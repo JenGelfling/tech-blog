@@ -60,11 +60,14 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log("Logout route hit");
   if (req.session.logged_in) {
     req.session.destroy(() => {
+      console.log("Session destroyed");
       res.status(204).end();
     });
   } else {
+    console.log("No user logged in");
     res.status(404).end();
   }
 });
