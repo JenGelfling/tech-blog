@@ -1,12 +1,21 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
+const { formatDate } = require("../../utils/helpers");
 
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.findAll({});
 
-    res.status(200).json(posts);
+    const formattedPosts = posts.map((post) => {
+      const postJson = post.toJSON();
+      return {
+        ...postJson,
+        createdAt: formatDate(new Date(postJson.createdAt)),
+      };
+    });
+
+    res.status(200).json(formattedPosts);
   } catch (err) {
     res.status(400).json(err);
   }

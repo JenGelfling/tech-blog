@@ -16,10 +16,7 @@
           <div class="display-flex align-center p-2">
             <a href="/">Home</a>
             <a href="/profile">Dashboard</a>
-            <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
-              {{! <a href="/api/users/logout">Logout</a>
-              | }}
               <button
                 class="no-button"
                 name="logout"
@@ -32,15 +29,12 @@
         </nav>
       </header>
       <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
         {{{body}}}
       </main>
       <footer>
 
       </footer>
     </div>
-
-    <!-- Render script for logged in users only -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
