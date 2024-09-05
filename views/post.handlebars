@@ -1,10 +1,10 @@
-<h1>{{post.title}}</h1>
-<p>{{post.content}}</p>
-<p>by {{post.user.username}}</p>
+<h1>{{this.title}}</h1>
+<p>{{this.content}}</p>
+<p>by {{this.user.username}}</p>
 <h3>Comments:</h3>
-{{#each post.comments}}
+{{#each this.comments}}
   <div>
-    <p>Created by {{user.name}} on {{format_date date_created}}</p>
     <p>{{this.content}} - by {{this.user.username}}</p>
+
   </div>
 {{/each}}
