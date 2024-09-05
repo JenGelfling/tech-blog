@@ -1,0 +1,22 @@
+[
+  {
+    "title": "First Post",
+    "content": "This is the content of the first post.",
+    "user_id": 1
+  },
+  {
+    "title": "Second Post",
+    "content": "This is the content of the second post.",
+    "user_id": 1
+  },
+  {
+    "title": "Hello World!",
+    "content": "This is the content of the Hello World post.",
+    "user_id": 2
+  },
+  {
+    "title": "A Day in the Life",
+    "content": "This is the content about a day in the life.",
+    "user_id": 3
+  }
+]

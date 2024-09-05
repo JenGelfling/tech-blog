@@ -1,7 +1,7 @@
+\c postgres;
 
+DROP DATABASE IF EXISTS techblog_db;
 
-DROP DATABASE IF EXISTS techBlog_db;
+CREATE DATABASE techblog_db;
 
-CREATE DATABASE techBlog_db;
-
-
+\c techblog_db;
