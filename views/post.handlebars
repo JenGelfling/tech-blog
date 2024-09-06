@@ -8,3 +8,23 @@
 
   </div>
 {{/each}}
+{{#if logged_in}}
+  <h4>Add a Comment:</h4>
+  <form id="comment-form">
+    <div class="form-group">
+      <textarea
+        id="comment-content"
+        placeholder="Write your comment here..."
+        required
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      name="comment-btn"
+      class="btn btn-primary"
+      id="comment-btn"
+    >Submit Comment</button>
+  </form>
+
+  <script src="/js/comment.js"></script>
+{{/if}}

@@ -2,6 +2,30 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 const { formatDate } = require("../../utils/helpers");
+const { Comment } = require("../../models");
+
+router.post("/:postId/comments", async (req, res) => {
+  const { postId } = req.params;
+  const { content } = req.body;
+
+  try {
+    if (!req.session.logged_in) {
+      return res
+        .status(401)
+        .json({ message: "You must be logged in to comment." });
+    }
+
+    const newComment = await Comment.create({
+      content,
+      post_id: postId,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 router.get("/", async (req, res) => {
   try {
