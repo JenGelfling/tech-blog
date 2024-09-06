@@ -6,7 +6,7 @@ I created this app using the Model-View-Controller (MVC) paradigm. I used expres
 
 ## Link to Deployed Version
 
-[Click here to see the deployed version](https://tech-blog-7zgi.onrender.com)
+[Click here to see the deployed version](https://tech-blog-9qov.onrender.com/)
 
 ## Link to Github Repo
 
